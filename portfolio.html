@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anika Hossain | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VISUAL THEME & COLORS --- */
+        :root {
+            --bg-cream: #FFFDF5;
+            --pastel-yellow: #FAD766;
+            --pastel-blue: #b4eef0;
+            --dark-blue: #1E3D59;
+            --accent-orange: #FF6B6B;
+            --text-dark: #2C3E50;
+            --card-radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-cream);
+            background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
+            background-size: 20px 20px; /* Dotted pattern effect */
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 4px solid var(--bg-cream);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            background: #FFF287;
+            padding: 30px;
+            border-radius: var(--card-radius);
+            position: relative;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--pastel-blue);
+            object-fit: cover;
+            margin-right: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Cute Title Styling */
+        h1.name {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            color: #FF9D00;
+            text-shadow: 2px 2px 0px var(--dark-blue);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--dark-blue);
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* --- GRID LAYOUT --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 30px;
+        }
+
+        /* --- SECTIONS --- */
+        .card {
+            background: #b7ffe8;
+            padding: 25px;
+            border-radius: var(--card-radius);
+            margin-bottom: 30px;
+            box-shadow:4px 4px 0px rgb(255 242 162 / 80%);
+        }
+
+        .section-title {
+            color: #ff9538; /* Burnt orange for titles like image */
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            background-color: #f6ff71;
+        }
+
+        /* --- LEFT COLUMN STYLES --- */
+        .ability-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .ability-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: rgb(75, 228, 179);
+            width: 40px;
+            text-align: center;
+        }
+
+        .ability-text h4 {
+            font-size: 1rem;
+            color: #039376;
+        }
+        .ability-text p {
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        /* Progress Bars */
+        .skill-bar {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: #2291e6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 10px;
+            font-family: 'Fredoka', sans-serif;
+        }
+        .bar-container {
+            flex-grow: 1;
+            height: 15px;
+            background: white;
+            border-radius: 10px;
+            border: 2px solid rgb(85, 85, 251);
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: rgb(0, 210, 234);
+        }
+
+        /* Interests */
+        .interests-row {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .interest-item i {
+            font-size: 1.5rem;
+            color: rgb(248, 230, 96);
+            margin-bottom: 5px;
+        }
+        .interest-item span {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* --- RIGHT COLUMN STYLES --- */
+        .intro-box {
+            background: #ead1ff; /* Slightly lighter blue */
+            position: relative;
+        }
+        .intro-box p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #f870e8;
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .timeline-icon {
+            min-width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: pink;
+            border: 2px solid hotpink;
+            margin-right: 15px;
+            z-index: 2;
+        }
+        /* The dotted line connecting timeline items */
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 22px;
+            top: 45px;
+            bottom: -20px;
+            width: 2px;
+            border-left: 2px dashed hotpink;
+            z-index: 1;
+        }
+
+        .timeline-content h4 {
+            color: #e622d2;
+            margin-bottom: 4px;
+        }
+        .timeline-content .role {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+        .timeline-content .year {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        /* Buttons & Socials */
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .btn-github { background: transparent; color: rgb(65, 167, 17);border: 2px solid rgb(65, 167, 17); }
+        .btn-linkedin { background:transparent; color: rgb(91, 130, 246); border: 2px solid rgb(91, 130, 246); }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; }
+            .profile-image { margin-right: 0; margin-bottom: 20px; }
+            .content-grid { grid-template-columns: 1fr; }
+            h1.name { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <img src="anika2.jpeg" alt="Anika Hossain Profile" class="profile-image">
+            
+            <div class="header-content">
+                <h1 class="name">ANIKA HOSSAIN</h1>
+                <div class="subtitle">Python Developer + Machine Learning Enthusiast</div>
+                <div class="contact-info">
+                    Dhaka, Bangladesh • anika.hossain02@gmail.com
+                </div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            
+            <aside class="left-panel">
+                
+                <section class="card">
+                    <h3 class="section-title">My Abilities</h3>
+                    
+                    <div class="ability-item">
+                        <div class="ability-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="ability-text">
+                            <h4>BETTER KNOWLEDGE</h4>
+                            <p>Web Dev,Coding,ML,DL,AI</p>
+                        </div>
+                    </div>
+
+                    <div class="ability-item">
+                        <div class="ability-icon"><i class="fas fa-code"></i></div>
+                        <div class="ability-text">
+                            <h4>FRAMEWORKS</h4>
+                            <p>Mysql,Django</p>
+                        </div>
+                    </div>
+
+                    <div class="ability-item">
+                        <div class="ability-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="ability-text">
+                            <h4>TOOLS</h4>
+                            <p>VS code,Github,Jupyter Notebook</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="background: #afdff7;">
+                    <h3 class="section-title">Code Skills</h3>
+                    
+                    <div class="skill-bar">
+                        <div class="skill-icon">Py</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-icon">Java</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-icon">C</div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="background: #fff9b3;">
+                    <h3 class="section-title">Interests</h3>
+                    <div class="interests-row">
+                        <div class="interest-item">
+                            <i class="fas fa-cat"></i>
+                            <span>Cats</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-coffee"></i>
+                            <span>Coffee</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-code"></i>
+                            <span>Code</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-plane"></i>
+                            <span>Travel</span>
+                        </div>
+                    </div>
+                </section>
+
+            </aside>
+
+            <main class="right-panel">
+                
+                <section class="card intro-box">
+                    <h3 class="section-title" style="text-align:left;">Hi There!</h3>
+                    <p>
+                        I'm a passionate <span class="highlight">Software Developer</span> located in Dhaka. 
+                        I enjoy solving complex problems and building efficient applications. 
+                        I never stop searching for <span class="highlight">new tech</span> to improve my skills. 
+                        I love having new adventures to earn new experiences and <span class="highlight">make every line of code count.</span>
+                    </p>
+                </section>
+
+                <section class="card" style="background: #ffdeec;"> <h3 class="section-title">Experience</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content">
+                            <h4>University Student</h4>
+                            <div class="role">Computer Science & Engineering</div>
+                            <div class="year">North South University (2022 - 2026)</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fab fa-github"></i></div>
+                        <div class="timeline-content">
+                            <h4>GitHub Contributor</h4>
+                            <div class="role">Open Source Projects</div>
+                            <div class="year">Check out my repos below!</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                            <h4>Projects</h4>
+                            <div class="role">Web & Software Development</div>
+                            <div class="year">AI,ML,DL Based</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" style="background-color: rgb(214, 255, 200);">
+                    <h3 class="section-title">Webfolio</h3>
+                    <div class="social-buttons">
+                        <a href="https://github.com/Anika2121" target="_blank" class="btn btn-github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/anika-hossain02" target="_blank" class="btn btn-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
